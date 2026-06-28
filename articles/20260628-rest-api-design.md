@@ -3,7 +3,7 @@ title: "パスかクエリか。1問の面接問題から学ぶ、API設計とRE
 emoji: "🛣️"
 type: "tech"
 topics: ["api", "rest", "http", "backend", "設計"]
-published: false
+published: true
 ---
 
 ![](/images/20260628-rest-api-design_hero.png)

@@ -3,7 +3,7 @@ title: "今は Obsidian を使わない選択: 薄いマスタデータと最新
 emoji: "📚"
 type: "idea"
 topics: ["obsidian", "pkm", "ai", "生産性", "ナレッジ管理"]
-published: false
+published: true
 ---
 
 ![](/images/20260702-declined-obsidian-for-now_hero.png)

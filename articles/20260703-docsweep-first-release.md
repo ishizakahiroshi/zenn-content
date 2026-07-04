@@ -150,6 +150,11 @@ frontmatter は OKF（Open Knowledge Format）互換にしてあるので、docs
 
 ---
 
+📎 図解版・関連リンクをまとめたページがあります:
+https://ishizakahiroshi.github.io/articles/2026/2026-07-03_docsweep-first-release/
+
+---
+
 ※ ヘッダー画像とインフォグラフィックは AI（画像生成）で作成しています。
 
 書いた人: ishizakahiroshi

@@ -120,6 +120,20 @@ pip install 'docsweep[all]'
 python -m docsweep triage
 ```
 
+Web UI（看板）はこちらで起動します。
+
+```bash
+python -m docsweep serve --root ~/dev
+```
+
+「やり忘れ」列には期日切れのカードが並びます。
+
+![Web UI のやり忘れ列](/images/20260703-docsweep-first-release-webui-todo.png)
+
+「完了」「廃止」になったカードは archive 候補列にまとまり、まとめて archive へ送れます。
+
+![Web UI の archive 候補列](/images/20260703-docsweep-first-release-webui-archive.png)
+
 リポジトリはこちらです。
 
 https://github.com/ishizakahiroshi/docsweep

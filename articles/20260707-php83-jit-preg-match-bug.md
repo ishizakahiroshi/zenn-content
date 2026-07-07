@@ -14,7 +14,7 @@ published: false
 
 ![](/images/2026-07-07_php83-jit-preg-match-bug_hero.png)
 
-![](/images/2026-07-07_php83-jit-preg-match-bug_infographic.png)
+![](/images/2026-07-07_php83-jit-preg-match-bug_infographic_v2.png)
 
 ## 「アプリを入れた直後」だったので、アプリを疑った
 

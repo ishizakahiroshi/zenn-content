@@ -1,5 +1,5 @@
 ---
-title: "Opus 4.8 の thinking-only silent end_turn を生 jsonl から追った (manabi-map 西日本 v0.4 リリース判断中の実話)"
+title: "Opus 4.8 の thinking-only silent end_turn を生 jsonl から追った"
 emoji: "🤖"
 type: "tech"
 topics: ["claude", "anthropic", "llm", "デバッグ", "opus"]

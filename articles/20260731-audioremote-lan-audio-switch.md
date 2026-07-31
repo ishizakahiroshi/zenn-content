@@ -231,9 +231,9 @@ if is_loopback(peer.ip()) {
 
 配布経路の話をしていて、壁打ちの相手 (私自身) がふとこう言いました。「MS Store で出せばダブルクリックで完結する非エンジニアにも届くじゃん」。
 
-一瞬「その通り」と思いました。SmartScreen 完全回避 + auto-update + winget にも自動連携。しかも登録料は 2025-09 の新オンボードで個人・法人ともに撤廃されていて、無料で入れます（https://learn.microsoft.com/ja-jp/windows/apps/publish/whats-new-individual-developer）。なぜこれを見落としていたんだろうと思いました。
+一瞬「その通り」と思いました。SmartScreen 完全回避 + auto-update + winget にも自動連携。しかも登録料は撤廃されていて無料で入れます。個人アカウントの 19 ドルが 2025-09-10（https://learn.microsoft.com/ja-jp/windows/apps/publish/whats-new-individual-developer ）、法人アカウントの 99 ドルが 2026-05-07（https://blogs.windows.com/windowsdeveloper/2026/05/07/publish-to-microsoft-store-as-a-company-now-with-free-registration-and-faster-onboarding/ ）です。ただし無料になるのは `storedeveloper.microsoft.com` から始めた新規登録フローだけで、Partner Center や Visual Studio から直接入るとレガシーの有料画面が出ます。なぜこれを見落としていたんだろうと思いました。
 
-ただ後で調べ直して分かったのは、無料になったのは入口だけということ。実際に効いてくるコストは金銭ではなく手間です。本人確認、MSIX パッケージング、認定審査、掲載素材。1 作品で通しておけば残りに流用できる、という性質のもの。
+ただ後で調べ直して分かったのは、無料になったのは登録の入口だけということ。実際に効いてくるコストは金銭ではなく手間です。本人確認、パッケージング、認定審査、掲載素材。1 作品で通しておけば残りに流用できる、という性質のもの。
 
 ### でも「そもそも非エンジニアはこれ使わない」
 
@@ -280,7 +280,9 @@ audience 定義を反映して、MS Store の戦略的優先度を下げまし�
 | Store の auto-update 価値 | 低 (更新頻度少) | 高 (vendor 追随で頻繁) |
 | SmartScreen 回避価値 | 低 (技術寄りは自力で解決) | 高 (新規参入者に優しい) |
 
-**audioremote は Store 戦略の主軸に据えない**。ただし v0.2 で Tauri ゲストアプリを作るとき MSIX 化のコストがほぼゼロで済むので、そのタイミングで opportunistic に参入する。
+**audioremote は Store 戦略の主軸に据えない**。ただし v0.2 で Tauri ゲストアプリを作るなら、そのタイミングで opportunistic に参入する。
+
+この判断、当時は「MSIX 化のコストがほぼゼロで済むから」を理由に置いていました。これは後で調べ直したら誤りでした。Tauri v2 の公式バンドラは MSI (WiX) と NSIS だけで MSIX を出しません（https://v2.tauri.app/distribute/windows-installer/ ）。MSIX 対応の要望 issue は 2022 年から open のままです（https://github.com/tauri-apps/tauri/issues/4818 ）。つまり Partner Center の「EXE or MSI app」枠で出す経路になり、この枠は Store が再署名しないので CA 発行のコード署名証明書を自前で用意する必要があります。コストはゼロにはなりません。
 
 MS Store の学習は、私が別に持っている GUI 完成品 `offline-md-editor-viewer` で先に消化してから、audioremote に還元する順序。
 
@@ -361,7 +363,7 @@ scoop install audioremote
 
 - 既存 Web UI コード (vanilla JS + HTML + CSS) を**そのまま流用可能**
 - native ウィンドウ・Windows ネイティブ通知使える
-- MSIX bundler が Tauri v2 に統合済み・Store 参入コストほぼゼロ
+- Windows インストーラー (MSI / NSIS) を公式バンドラで出せる（当初ここに「MSIX bundler が Tauri v2 に統合済み」と書いていましたが誤りでした。MSIX は公式サポート外です）
 - Rust ベースなので既存の Rust 学習投資がそのまま生きる
 - macOS / Linux 対応が副次的についてくる
 

@@ -282,7 +282,9 @@ audience 定義を反映して、MS Store の戦略的優先度を下げまし�
 
 **audioremote は Store 戦略の主軸に据えない**。ただし v0.2 で Tauri ゲストアプリを作るなら、そのタイミングで opportunistic に参入する。
 
-この判断、当時は「MSIX 化のコストがほぼゼロで済むから」を理由に置いていました。これは後で調べ直したら誤りでした。Tauri v2 の公式バンドラは MSI (WiX) と NSIS だけで MSIX を出しません（https://v2.tauri.app/distribute/windows-installer/ ）。MSIX 対応の要望 issue は 2022 年から open のままです（https://github.com/tauri-apps/tauri/issues/4818 ）。つまり Partner Center の「EXE or MSI app」枠で出す経路になり、この枠は Store が再署名しないので CA 発行のコード署名証明書を自前で用意する必要があります。コストはゼロにはなりません。
+この判断、当時は「MSIX 化のコストがほぼゼロで済むから」を理由に置いていました。これは後で調べ直したら誤りでした。Tauri v2 の公式バンドラは MSI (WiX) と NSIS だけで、MSIX を出しません（https://v2.tauri.app/distribute/windows-installer/ ）。MSIX 対応の要望 issue は 2022 年から open のままです（https://github.com/tauri-apps/tauri/issues/4818 ）。
+
+MSIX で提出する経路自体は生きています。Store が Microsoft の証明書で再署名してくれるので、コード署名証明書を買わずに済むのはこちら。ただし MSIX 化は `MakeAppx` を直に叩くスクリプトを自分で書く必要があり、ボタン一発では終わりません。EXE/MSI 枠で出す場合は Store が再署名しないので、CA 発行の証明書が別途必要になります。どちらにしてもコストはゼロにはなりません。
 
 MS Store の学習は、私が別に持っている GUI 完成品 `offline-md-editor-viewer` で先に消化してから、audioremote に還元する順序。
 
@@ -363,7 +365,7 @@ scoop install audioremote
 
 - 既存 Web UI コード (vanilla JS + HTML + CSS) を**そのまま流用可能**
 - native ウィンドウ・Windows ネイティブ通知使える
-- Windows インストーラー (MSI / NSIS) を公式バンドラで出せる（当初ここに「MSIX bundler が Tauri v2 に統合済み」と書いていましたが誤りでした。MSIX は公式サポート外です）
+- Windows インストーラー (MSI / NSIS) を公式バンドラで出せる（当初ここに「MSIX bundler が Tauri v2 に統合済み」と書いていましたが誤りでした。MSIX は公式サポート外なので、Store へ出すなら `MakeAppx` で自前パッケージングが要ります）
 - Rust ベースなので既存の Rust 学習投資がそのまま生きる
 - macOS / Linux 対応が副次的についてくる
 

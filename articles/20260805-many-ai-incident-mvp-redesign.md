@@ -26,6 +26,12 @@ https://zenn.dev/ishizakahiroshi/articles/20260805-npm-chaindrop-attack
 
 ![MANY-AI Incidentへ再設計した全体像](/images/2026-08-05_many-ai-incident-mvp-redesign_infographic.png)
 
+## 忙しい人向け（AI 音声解説・17分）
+
+この記事の音声版をNotebookLMで作りました。移動中・作業中の「ながら聴き」にどうぞ。
+
+@[youtube](BdaEtSR5Tlc)
+
 ## 結局、何を変えたのか
 
 最初に考えていたのは、これから何かを入れるたびに1行記録する道具でした。

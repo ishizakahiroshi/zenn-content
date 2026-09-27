@@ -78,6 +78,9 @@ dry-run で試したところ、狙った target と store だけが一覧に出
 
 ---
 
+📎 図解版・関連リンクをまとめたページがあります:
+https://ishizakahiroshi.com/articles/2026/2026-09-27_dev-cache-cleanup/
+
 ※ ヘッダー画像は AI（画像生成）で作成しています。
 
 ※ 本文の挿絵も AI（画像生成）で作成しています。

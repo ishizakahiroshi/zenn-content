@@ -189,6 +189,9 @@ Windowsでは作成された「MANY-AI-CLI」ショートカットからトレ�
 
 ---
 
+📎 図解版・関連リンクをまとめたページがあります:
+https://ishizakahiroshi.com/articles/2026/2026-09-27_ui-freeze-instrumentation-purge/
+
 ※ ヘッダー画像とインフォグラフィックの絵は AI（画像生成）で作成しています。
 
 ※ 本文の挿絵も AI（画像生成）で作成しています。

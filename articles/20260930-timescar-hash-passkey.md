@@ -3,7 +3,7 @@ title: "「復元できない形式で保管」だけでは足りない理由。
 emoji: "🔐"
 type: "tech"
 topics: ["security", "passkey", "webauthn", "password", "authentication"]
-published: true
+published: false
 ---
 
 ![](/images/01_2026-09-30_timescar-hash-passkey_hero.png)

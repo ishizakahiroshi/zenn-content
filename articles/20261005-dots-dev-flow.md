@@ -3,7 +3,7 @@ title: "dotsに複数工程を任せる開発の型 取り決めと1回の承認
 emoji: "🔗"
 type: "idea"
 topics: ["ai", "github", "ci", "test", "claude"]
-published: true
+published: false
 ---
 
 この記事自体もdotsが執筆しています。事実整理・独立検収・公開は手元の担当です。
